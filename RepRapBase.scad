@@ -38,9 +38,9 @@ module rightSide(){
 module front(){
 	difference(){
 		polygon(points=[[-x/2,0],[x/2,0],[x/2,-zFront],[-x/2,-zFront]],paths = [[0,1,2,3]]);
-			rotate([0,180,180]) translate([-150,25,-5]) label();
+			rotate([0,180,180]) translate([-150,25,0]) label();
 	}
-}
+} 
 module back(){
 	polygon(points=[[-x/2,0],[x/2,0],[x/2,zBack],[-x/2,zBack]],paths = [[0,1,2,3]]);
 }
@@ -49,6 +49,10 @@ module powerPlug(){
 
 }
 
+module powerSwitch(){
+
+}
+
 module label(){
-	write("JOAT Labs", h=60, t=10, font = "orbitron.dxf");
+	import("label.dxf", layer = "layer");
 }
